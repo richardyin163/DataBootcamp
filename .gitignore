@@ -17,6 +17,7 @@ docker/data/
 __pycache__/
 *.pyc
 *.pyo
+.venv/
 
 # Test and coverage artifacts
 .pytest_cache/

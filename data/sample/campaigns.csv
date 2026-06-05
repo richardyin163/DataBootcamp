@@ -1,0 +1,6 @@
+campaign_id,campaign_name,campaign_type,channel_type,start_date,end_date,budget_amount
+C001,campaign_1,bundle,app_push,2026-05-01,2026-05-31,10500
+C002,campaign_2,discount,wechat,2026-05-01,2026-05-31,11000
+C003,campaign_3,coupon,app_push,2026-05-01,2026-05-31,11500
+C004,campaign_4,discount,app_push,2026-05-01,2026-05-31,12000
+C005,campaign_5,bundle,app_push,2026-05-01,2026-05-31,12500
