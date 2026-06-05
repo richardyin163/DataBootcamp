@@ -170,6 +170,16 @@
 - `docker/prometheus.yml`
 - 其他后续容器相关配置
 
+### 6.3 第一阶段实施产物索引
+
+- `docs/specs/marketing-analytics-phase1-spec.md`
+- `docs/specs/sample-data-design.md`
+- `docs/specs/schema-comparison.md`
+- `sql/dimensional/`
+- `sql/medallion/`
+- `sql/hybrid/`
+- `docs/results/`
+
 ## 7. 当前仍待后续细化但不影响先落地文档的部分
 
 以下内容还需要在后续实现或计划阶段细化，但不影响当前先写入 docs：
