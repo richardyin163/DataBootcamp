@@ -1,1 +1,7 @@
-{}
+{
+  "scripts": {
+    "generate:data": "python3 ../scripts/generate_marketing_data.py",
+    "check:spec": "python3 -c \"from pathlib import Path; paths=['../docs/specs/marketing-analytics-phase1-spec.md','../docs/specs/sample-data-design.md','../docs/specs/schema-comparison.md']; missing=[p for p in paths if not Path(p).exists()]; assert not missing, missing; print('spec files ok')\"",
+    "check:sql": "python3 -c \"from pathlib import Path; paths=['../sql/common/create_database.sql','../sql/dimensional/queries.sql','../sql/medallion/queries.sql','../sql/hybrid/queries.sql']; missing=[p for p in paths if not Path(p).exists()]; assert not missing, missing; print('sql files ok')\""
+  }
+}
