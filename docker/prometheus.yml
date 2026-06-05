@@ -1,0 +1,31 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets:
+          - prometheus:9090
+
+  - job_name: flink-jobmanager
+    static_configs:
+      - targets:
+          - jobmanager:9249
+
+  - job_name: flink-taskmanager
+    static_configs:
+      - targets:
+          - taskmanager:9250
+
+  - job_name: doris-fe
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - doris-fe:8030
+
+  - job_name: doris-be
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - doris-be:8040
