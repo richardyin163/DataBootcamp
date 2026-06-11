@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataBootcamp Readability Catalog</title>
+    <style>
+      :root {
+        --bg: #f7f2e8;
+        --card: #fffaf1;
+        --ink: #1f2933;
+        --muted: #52606d;
+        --line: #d9cbb3;
+        --accent: #8c3b2a;
+        --accent-soft: #f5dfd8;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Noto Serif SC", serif;
+        color: var(--ink);
+        background: linear-gradient(180deg, #f6efe4 0%, #fbf8f2 100%);
+      }
+
+      main {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 32px 20px 72px;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      .hero,
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 12px 30px rgba(140, 59, 42, 0.08);
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .model-card,
+      .table-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px;
+        background: #fffefb;
+      }
+
+      .model-card.is-active,
+      .table-card.is-active {
+        background: var(--accent-soft);
+      }
+
+      .layer-block {
+        margin-top: 18px;
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+      }
+
+      .table-detail {
+        margin-top: 12px;
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: #fffdf8;
+      }
+
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .ghost-button {
+        background: transparent;
+        border: none;
+        color: var(--accent);
+        padding: 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        padding: 8px;
+        vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <p>DataBootcamp / Readability Catalog</p>
+        <h1>用一页看清项目进展、数据集、模型层级与表结构</h1>
+        <p>点击模型卡片查看层级结构，点击表名展开字段与前 2 行样例。</p>
+      </section>
+
+      <section id="progress" class="panel">
+        <h2>项目进展</h2>
+        <ul>
+          <li>当前阶段：第一阶段实验验证</li>
+          <li>已具备：样例数据、三套 SQL、结果文档、结构说明</li>
+          <li>当前增强点：模型下钻、表字段说明、前 2 行样例预览</li>
+        </ul>
+      </section>
+
+      <section id="dataset" class="panel">
+        <h2>Dataset 总览</h2>
+        <p>点击表卡片查看字段与前 2 行样例，详情会固定显示在下方面板中。</p>
+        <div id="dataset-browser" class="grid"></div>
+        <div id="dataset-detail-panel" class="table-detail"></div>
+      </section>
+
+      <section id="models" class="panel">
+        <h2>模型对比</h2>
+        <p>点击模型卡片切换当前查看的模型详情。</p>
+        <div id="model-selector" class="grid"></div>
+      </section>
+
+      <section id="layers" class="panel">
+        <h2>模型详情</h2>
+        <div id="model-detail"></div>
+        <div id="model-table-detail-panel" class="table-detail"></div>
+      </section>
+
+      <section id="quick-links" class="panel">
+        <h2>快速入口</h2>
+        <ul>
+          <li><a href="project-status.md">项目状态</a></li>
+          <li><a href="data-dictionary.md">数据字典</a></li>
+          <li><a href="data-lineage.md">数据血缘</a></li>
+          <li><a href="specs/schema-comparison.md">结构对比</a></li>
+        </ul>
+      </section>
+    </main>
+    <script src="catalog-data.js"></script>
+    <script src="catalog.js"></script>
+  </body>
+</html>
